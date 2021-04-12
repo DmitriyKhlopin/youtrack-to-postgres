@@ -4,12 +4,12 @@ package com.khlopin.youtracktopostgres.database;
 import com.khlopin.youtracktopostgres.database.models.Issue;
 import org.springframework.data.r2dbc.repository.Query;
 import org.springframework.data.repository.reactive.ReactiveCrudRepository;
-import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 
 public interface IssuesRepository extends ReactiveCrudRepository<Issue, String> {
     @Query("select  * from issues where id_readable = :idReabale")
-    Flux<Issue> findByIdReadable(String idReadable);
+    Mono<Issue> findByIdReadable(String idReadable);
 
     /*@Override
     @Query("insert into issues (id_readable, created, updated) values (:#{#entity.idReadable},:#{#entity.created},:#{#entity.updated}) on conflict do nothing")
