@@ -1,9 +1,6 @@
 package com.khlopin.youtracktopostgres.database.models;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
+import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
@@ -14,6 +11,7 @@ import java.sql.Timestamp;
 @Table(value = "issues")
 @AllArgsConstructor
 @NoArgsConstructor
+@RequiredArgsConstructor
 public class Issue {
     @Id
     Long id;
